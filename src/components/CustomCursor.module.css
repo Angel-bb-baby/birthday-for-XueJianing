@@ -1,0 +1,25 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #7f9176;
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor.is-hover {
+  background: #d49a84;
+}
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

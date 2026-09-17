@@ -1,0 +1,147 @@
+.section {
+  position: relative;
+  padding: var(--section-pad-y) var(--section-pad-x);
+  background: var(--bg-alt);
+}
+
+.layout {
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+.kicker {
+  font-family: var(--font-hand);
+  color: var(--coral);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  align-self: start;
+}
+
+.paperWrap {
+  position: relative;
+  width: min(100%, 640px);
+}
+
+.shadow {
+  position: absolute;
+  inset: 18px -18px -22px 22px;
+  background: var(--sage-light);
+  opacity: 0.35;
+  border-radius: 2px;
+  transform: rotate(2.5deg);
+}
+
+.paper {
+  position: relative;
+  background: var(--paper);
+  padding: clamp(2rem, 5vw, 3.4rem) clamp(1.6rem, 4vw, 3rem) clamp(2.4rem, 6vw, 3.8rem);
+  transform: rotate(-1.4deg);
+  box-shadow:
+    0 24px 50px -28px rgb(65 65 60 / 0.35),
+    0 1px 0 rgb(255 255 255 / 0.8) inset;
+}
+
+.paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 62%, rgb(231 215 162 / 0.18) 100%);
+}
+
+.stamp {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.3rem;
+  width: 58px;
+  height: 58px;
+  border: 1.5px dashed var(--sage);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: rotate(12deg);
+  color: var(--sage-deep);
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.meta {
+  font-family: var(--font-hand);
+  color: var(--ink-faint);
+  margin-bottom: 1.8rem;
+}
+
+.body {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.38rem);
+  line-height: 1.85;
+  white-space: pre-wrap;
+}
+
+.pressed {
+  position: absolute;
+  width: 92px;
+  left: -10%;
+  bottom: -6%;
+  transform: rotate(-18deg);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  width: 42px;
+  right: -4%;
+  top: 18%;
+  transform: rotate(22deg);
+  animation: sway 4.5s ease-in-out infinite;
+  transform-origin: 50% 0;
+}
+
+.note {
+  position: absolute;
+  right: 4%;
+  bottom: -1.6rem;
+  font-family: var(--font-hand);
+  color: var(--sage-deep);
+  font-size: 1.25rem;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(22deg); }
+  50% { transform: rotate(28deg); }
+}
+
+@media (max-width: 768px) {
+  .pressed {
+    left: -2%;
+    width: 68px;
+  }
+
+  .leaf {
+    display: none;
+  }
+
+  .paper {
+    transform: rotate(-0.6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf {
+    animation: none;
+  }
+}

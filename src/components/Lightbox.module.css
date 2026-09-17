@@ -1,0 +1,70 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgb(65 65 60 / 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.figure {
+  position: relative;
+  max-width: min(720px, 92vw);
+  padding: 0.9rem 0.9rem 1.4rem;
+  background: var(--paper);
+  box-shadow: 0 30px 80px -30px rgb(65 65 60 / 0.5);
+}
+
+.figure img,
+.placeholder {
+  width: min(72vw, 640px);
+  max-height: 72vh;
+  object-fit: cover;
+}
+
+.placeholder {
+  height: min(58vh, 420px);
+}
+
+.v0 { background: linear-gradient(160deg, #e7d7a2 0%, #bac5b1 48%, #d8b2ac 100%); }
+.v1 { background: linear-gradient(200deg, #aabcc4 0%, #f5f1e8 42%, #aab7a2 100%); }
+.v2 { background: linear-gradient(140deg, #d49a84 0%, #e7d7a2 46%, #f1efe7 100%); }
+.v3 { background: linear-gradient(180deg, #bac5b1 0%, #d8b2ac 58%, #e7d7a2 100%); }
+.v4 { background: linear-gradient(210deg, #f5f1e8 0%, #aab7a2 40%, #aabcc4 100%); }
+.v5 { background: linear-gradient(155deg, #d8b2ac 0%, #f5f1e8 50%, #d49a84 100%); }
+
+.caption {
+  margin-top: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.close {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--paper);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 480px) {
+  .figure {
+    width: 100%;
+  }
+
+  .figure img,
+  .placeholder {
+    width: 100%;
+  }
+}

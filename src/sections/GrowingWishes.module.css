@@ -1,0 +1,130 @@
+.section {
+  position: relative;
+  height: 220vh;
+  background: var(--bg);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 8vh var(--section-pad-x);
+}
+
+.copy {
+  position: relative;
+  max-width: 28ch;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.8vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.hint {
+  font-family: var(--font-hand);
+  color: var(--ink-soft);
+  font-size: 1.25rem;
+}
+
+.plantWrap {
+  display: grid;
+  place-items: center;
+}
+
+.svg {
+  width: min(100%, 340px);
+  height: auto;
+}
+
+.stem {
+  fill: none;
+  stroke: #7f9176;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.leaf {
+  transform-box: fill-box;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.leaf:hover,
+.leaf:focus-visible {
+  filter: brightness(0.96);
+}
+
+.tooltip {
+  margin-top: 1.8rem;
+  max-width: 28ch;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: var(--ink);
+  min-height: 3.2em;
+}
+
+.words {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.word {
+  font-family: var(--font-hand);
+  color: var(--sage-deep);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .sticky {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 1rem;
+    padding-top: 6vh;
+  }
+
+  .tooltip {
+    margin-top: 0.8rem;
+  }
+
+  .words {
+    display: flex;
+  }
+
+  .wordBtn {
+    min-height: 44px;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-hand);
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    background: rgb(255 253 247 / 0.6);
+  }
+
+  .isOn {
+    color: var(--ink);
+    background: var(--yellow);
+  }
+
+  .section {
+    height: 180vh;
+  }
+
+  .svg {
+    width: min(100%, 220px);
+  }
+}

@@ -1,0 +1,43 @@
+:root {
+  --bg: #f5f1e8;
+  --bg-alt: #f1efe7;
+  --bg-warm: #eee6d8;
+  --bg-sage: #e7ece3;
+  --bg-rose: #f0e6e1;
+  --sage: #aab7a2;
+  --sage-deep: #7f9176;
+  --sage-light: #bac5b1;
+  --yellow: #e7d7a2;
+  --yellow-deep: #c9b57a;
+  --pink: #d8b2ac;
+  --coral: #d49a84;
+  --blue: #aabcc4;
+  --ink: #41413c;
+  --ink-soft: #6a6a62;
+  --ink-faint: #8c8c84;
+  --paper: #fffdf7;
+  --cream: #faf7f0;
+  --white: #fffcf6;
+
+  --font-display: 'Fraunces', 'Noto Serif SC', serif;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  --font-sans: 'Manrope', 'Noto Sans SC', sans-serif;
+  --font-hand: 'Caveat', 'Noto Sans SC', cursive;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --duration: 0.9s;
+
+  --mx: 50;
+  --my: 50;
+
+  --section-pad-x: clamp(1.25rem, 6vw, 6.5rem);
+  --section-pad-y: clamp(4.5rem, 14vh, 9rem);
+  --max: 1180px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration: 0.01s;
+  }
+}

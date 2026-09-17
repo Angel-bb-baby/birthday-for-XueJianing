@@ -1,0 +1,54 @@
+.section {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 12vh var(--section-pad-x) 10vh;
+  background: var(--bg-alt);
+  text-align: center;
+}
+
+.inner {
+  width: min(100%, 680px);
+}
+
+.line {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin-bottom: 2.4rem;
+}
+
+.sign {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-style: italic;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-style: italic;
+  display: block;
+  font-size: 1.35em;
+  margin-top: 0.2rem;
+}
+
+.date {
+  display: block;
+  margin-top: 0.8rem;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+}
+
+.mark {
+  width: 64px;
+  margin: 2.8rem auto 2.2rem;
+}
+
+.from {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--ink-faint);
+}

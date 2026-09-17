@@ -1,0 +1,123 @@
+.section {
+  position: relative;
+  padding: var(--section-pad-y) var(--section-pad-x) calc(var(--section-pad-y) + 2rem);
+  background: var(--bg);
+}
+
+.inner {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: clamp(2.5rem, 7vh, 5rem);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 6vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  max-width: 12ch;
+  line-height: 1.05;
+}
+
+.field {
+  position: relative;
+  min-height: 620px;
+}
+
+.chip {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  min-height: 44px;
+  padding: 0.35rem 0.2rem;
+  transform: rotate(var(--rot)) translate(
+    calc((var(--mx) - 50) * 0.03px),
+    calc((var(--my) - 50) * 0.03px)
+  );
+  transition: transform 0.7s var(--ease-out);
+}
+
+.chip:hover,
+.chip:focus-visible {
+  transform: rotate(calc(var(--rot) * -0.4)) scale(1.06);
+  z-index: 2;
+}
+
+.word {
+  display: block;
+  font-family: var(--font-display);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.xl .word { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+.lg .word { font-size: clamp(1.7rem, 3.6vw, 2.8rem); }
+.md .word { font-size: clamp(1.2rem, 2.4vw, 1.85rem); font-family: var(--font-serif); font-style: italic; }
+.sm .word { font-size: clamp(1.05rem, 1.8vw, 1.35rem); font-family: var(--font-hand); }
+
+.yellow { color: var(--yellow-deep); }
+.sage { color: var(--sage-deep); }
+.coral { color: var(--coral); }
+.pink { color: var(--pink); }
+.blue { color: var(--blue); }
+.ink { color: var(--ink); }
+
+.note {
+  display: block;
+  max-width: 18ch;
+  margin-top: 0.35rem;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.chip:hover .note,
+.chip:focus-visible .note {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scribble {
+  position: absolute;
+  right: 8%;
+  top: 0;
+  width: 90px;
+  color: var(--sage);
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .field {
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem 1.6rem;
+    align-items: flex-end;
+  }
+
+  .chip {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+  }
+}
+
+@media (hover: none) {
+  .note {
+    opacity: 0.85;
+    transform: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .chip {
+    transform: rotate(var(--rot));
+  }
+}
