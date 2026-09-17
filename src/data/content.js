@@ -1,5 +1,5 @@
 export const birthdayData = {
-  name: 'Anran',
+  name: 'Xue Jianing',
   date: '21 September',
   year: '2026',
   from: 'Chen',
